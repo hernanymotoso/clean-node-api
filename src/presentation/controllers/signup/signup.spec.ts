@@ -53,7 +53,7 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
-        email: 'any_email@mail.com',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
@@ -69,7 +69,7 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
-        name: 'any_email',
+        name: 'any_name',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
@@ -85,8 +85,8 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         passwordConfirmation: 'any_password'
       }
     }
@@ -101,8 +101,8 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password'
       }
     }
@@ -117,8 +117,8 @@ describe('SignUp Controller', () => {
     const { sut } = makeSut()
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'invalid_password'
       }
@@ -136,8 +136,8 @@ describe('SignUp Controller', () => {
 
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'invalid_email@mail.com',
+        name: 'any_name',
+        email: 'invalid_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
@@ -155,15 +155,15 @@ describe('SignUp Controller', () => {
 
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
     }
 
     sut.handle(httpRequest)
-    expect(isValidSpy).toHaveBeenCalledWith('any_email@mail.com')
+    expect(isValidSpy).toHaveBeenCalledWith('any_email@email.com')
   })
 
   it('Should return 500 if EmailValidator throws', () => {
@@ -174,8 +174,8 @@ describe('SignUp Controller', () => {
 
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
@@ -195,8 +195,8 @@ describe('SignUp Controller', () => {
 
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
@@ -214,8 +214,8 @@ describe('SignUp Controller', () => {
 
     const httpRequest = {
       body: {
-        name: 'any_email',
-        email: 'any_email@mail.com',
+        name: 'any_name',
+        email: 'any_email@email.com',
         password: 'any_password',
         passwordConfirmation: 'any_password'
       }
@@ -223,8 +223,8 @@ describe('SignUp Controller', () => {
 
     sut.handle(httpRequest)
     expect(addSpy).toHaveBeenCalledWith({
-      name: 'any_email',
-      email: 'any_email@mail.com',
+      name: 'any_name',
+      email: 'any_email@email.com',
       password: 'any_password'
     })
   })
