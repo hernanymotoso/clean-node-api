@@ -6,7 +6,6 @@ import { EmailInUseError } from '../../errors'
 export class SignUpController implements Controller {
   constructor (private readonly addAccount: AddAccount, private readonly validation: Validation, private readonly authentication: Authentication) {}
 
-  // TODO: don't create account if email already used
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
       const error = this.validation.validate(httpRequest.body)
