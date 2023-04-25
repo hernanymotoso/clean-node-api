@@ -3,15 +3,12 @@ language: node_js
 node_js:
   - 18
 
-cache:
-  npm: false
-  directories:
-    - ./.yarn/cache
-
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
   - export PATH="$HOME/.yarn/bin:$PATH"
-  - yarn -v
+
+cache:
+  yarn: true
 
 install: yarn
 
