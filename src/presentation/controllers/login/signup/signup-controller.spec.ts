@@ -1,4 +1,4 @@
-import { EmailInUseError, MissingParamError, ServerError } from '@/presentation/errors'
+
 import {
   AccountModel,
   AddAccountModel,
@@ -15,6 +15,7 @@ import {
   ok,
   serverError
 } from '@/presentation/helpers/http/http-helper'
+import { EmailInUseError, MissingParamError, ServerError } from '@/presentation/errors'
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
