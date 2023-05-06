@@ -1,4 +1,4 @@
-import { EmailInUseError, MissingParamError, ServerError } from '../../../errors'
+
 import {
   AccountModel,
   AddAccountModel,
@@ -14,7 +14,8 @@ import {
   forbidden,
   ok,
   serverError
-} from '../../../helpers/http/http-helper'
+} from '@/presentation/helpers/http/http-helper'
+import { EmailInUseError, MissingParamError, ServerError } from '@/presentation/errors'
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStub implements AddAccount {
@@ -59,7 +60,7 @@ const makeFakeRequest = (): HttpRequest => ({
   }
 })
 
-interface SutTypes {
+type SutTypes = {
   sut: SignUpController
   addAccountStub: AddAccount
   validationStub: Validation
