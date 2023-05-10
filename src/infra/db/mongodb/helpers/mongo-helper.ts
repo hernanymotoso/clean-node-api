@@ -21,13 +21,15 @@ export const MongoHelper = {
     if (!this.client?.isConnected()) {
       await this.connect(this.uri)
     }
-
     return this.client.db().collection(name)
   },
 
-  map: <T extends unknown>(collection: any): T => {
-    const { _id, ...collectionWithOutId } = collection
-
+  map: <T extends unknown>(data: any): T => {
+    const { _id, ...collectionWithOutId } = data
     return Object.assign({}, collectionWithOutId, { id: _id })
+  },
+
+  mapCollection: <T extends unknown>(collection: any[]): T[] => {
+    return collection.map(coll => MongoHelper.map(coll))
   }
 }
